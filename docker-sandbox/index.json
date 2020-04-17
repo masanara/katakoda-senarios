@@ -6,8 +6,12 @@
   "details": {
     "steps": [
       {
-        "title": "docker cli",
+        "title": "はじめに",
         "text": "step1.md"
+      },
+      {
+        "title": "docker cli",
+        "text": "step2.md"
       }
     ],
     "intro": {
