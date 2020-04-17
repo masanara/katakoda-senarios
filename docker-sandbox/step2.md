@@ -1,36 +1,16 @@
-- docker run : コンテナを起動
-- docker stop : コンテナを停止
-- docker ps : コンテナ一覧を表示
-- docker pull : コンテナイメージを取得
-- docker images : コンテナイメージ一覧を表示
-- docker exec : 起動中のコンテナ内でコマンドを実行
-- docker attach : コンテナに接続
-- docker logs : コンテナのログを表示
+コンテナの利用
+----------------------------
 
-ローカルに存在するコンテナイメージの確認
+バックグラウンドでコンテナを起動する
 
-`docker images`{{execute}}
+`docker run -tid --name mycentos centos bash`{{execute}}
 
-コンテナイメージの検索
+起動したコンテナの確認
 
-`docker search centos`{{execute}}
+`docker ps`{{execute}}
 
-コンテナイメージのダウンロード
+コンテナに接続する
 
-`docker pull centos`{{execute}}
+`docker attach mycentos`{{execute}}
 
-コンテナイメージが追加されたことを確認
 
-`docker images`{{execute}}
-
-コンテナの起動
-
-`docker run -ti centos bash`{{execute}}
-
-コンテナ内で起動するプロセスの確認 - bashだけが起動している
-
-`ps ax`{{execute}}
-
-ネットワークの確認をするため`net-tools`をインストールする
-
-`dnf install -y net-tools`{{execute}}

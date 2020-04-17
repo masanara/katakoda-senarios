@@ -1,15 +1,47 @@
-docker infoコマンドによる確認
+dockerコマンド
+----------------------------
+
+- docker run : コンテナを起動
+- docker stop : コンテナを停止
+- docker ps : コンテナ一覧を表示
+- docker pull : コンテナイメージを取得
+- docker images : コンテナイメージ一覧を表示
+- docker exec : 起動中のコンテナ内でコマンドを実行
+- docker attach : コンテナに接続
+- docker logs : コンテナのログを表示
+
+dockerの情報表示
 
 `docker info`{{execute}}
 
-dockerプロセスの起動状況の確認
+ローカルに存在するコンテナイメージの確認
 
-`ps ax | grep -e docker -e container`{{execute}}
+`docker images`{{execute}}
 
-dockerブリッジの確認
+コンテナイメージの検索
 
-`ip link show docker0`{{execute}}
+`docker search centos`{{execute}}
 
-dockerブリッジに設定されているIPアドレスの確認
+コンテナイメージのダウンロード
 
-`ip address show docker0`{{execute}}
+`docker pull centos`{{execute}}
+
+コンテナイメージが追加されたことを確認
+
+`docker images`{{execute}}
+
+コンテナの起動
+
+`docker run -ti centos bash`{{execute}}
+
+コンテナ内で起動するプロセスの確認 - bashだけが起動している
+
+`ps ax`{{execute}}
+
+コンテナからexitするとコンテナが終了する。
+
+`exit`{{execute}}
+
+終了したコンテナを確認する。
+
+`docker ps -a`{{execute}}
